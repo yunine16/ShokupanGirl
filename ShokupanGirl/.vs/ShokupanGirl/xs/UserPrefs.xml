@@ -1,9 +1,12 @@
 ﻿<Properties StartupConfiguration="{77B7EE5F-A092-DC6D-F2F7-32B061110F25}|">
-  <MonoDevelop.Ide.ItemProperties.ShokupanGirl PreferredExecutionTarget="9ec5fbf1-7134-4cba-b1ff-1533bf190379" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/TimeScript.cs">
+  <MonoDevelop.Ide.ItemProperties.ShokupanGirl PreferredExecutionTarget="eeab07b0-a04f-4e07-92a9-e541fa382dc3" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/ClearScript.cs">
     <Files>
-      <File FileName="Assets/Script/PlayerScript.cs" Line="8" Column="24" />
-      <File FileName="Assets/Script/TimeScript.cs" Line="4" Column="18" />
+      <File FileName="Assets/Script/PlayerScript.cs" Line="45" Column="45" />
+      <File FileName="Assets/Script/TimeScript.cs" Line="45" Column="13" />
+      <File FileName="Assets/Script/EnemyScript.cs" Line="19" Column="9" />
+      <File FileName="Assets/Script/HomeScript.cs" Line="16" Column="51" />
+      <File FileName="Assets/Script/ClearScript.cs" Line="19" Column="12" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +14,7 @@
           <Node name="ShokupanGirl" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Script" expanded="True">
-                <Node name="TimeScript.cs" selected="True" />
+                <Node name="ClearScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>

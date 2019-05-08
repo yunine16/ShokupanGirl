@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeScript : MonoBehaviour {
 
@@ -36,7 +37,14 @@ public class TimeScript : MonoBehaviour {
             min = 0;
             hour += 1;
         }
-        
+
+
+        //制限時間(8:30)になったらゲームオーバー画面に遷移
+        if (hour == 8 && min == 30)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
 
         minText.text = min.ToString();
         hourText.text = hour.ToString();
