@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour {
 
     public float speed = 0.5f;
-    public int jump = 6;
+    public float wide = 3.0f;
 
 
 	// Use this for initialization
@@ -20,20 +20,28 @@ public class PlayerScript : MonoBehaviour {
         //何も押さないと走る、スペースキー押すと止まる
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.position += Vector3.zero;
+            transform.position -= Vector3.zero;
         }
         else
         {
-            transform.position += transform.forward * speed * Time.deltaTime;
+            transform.position -= transform.forward * speed * Time.deltaTime;
         }
 
 
-        //エンターキー押すとジャンプ
-        if (Input.GetKeyDown(KeyCode.Return))
+        //上矢印キー押すと奥いく
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(0, jump, 0);
+            transform.position += new Vector3(wide, 0, 0);
             Debug.Log(1);
         }
+
+        //下矢印キー押すと手前いく
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            transform.position -= new Vector3(wide, 0, 0);
+            Debug.Log(2);
+        }
+
     }
 
 
