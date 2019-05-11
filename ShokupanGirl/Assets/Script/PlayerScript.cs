@@ -5,43 +5,49 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
-    public float speed = 0.5f;
-    public float wide = 3.0f;
+    public float speed = 100.0f;
+    public float wide = 3.5f;
+    private Animator animator;
 
 
 	// Use this for initialization
 	void Start () {
-		
+        animator = GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-    
+
+    // Update is called once per frame
+    void Update()
+    {
+
         //何も押さないと走る、スペースキー押すと止まる
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.position -= Vector3.zero;
+            transform.position += Vector3.zero;
+            animator.SetBool("Running", false);
         }
         else
         {
-            transform.position -= transform.forward * speed * Time.deltaTime;
+            transform.position += transform.forward * speed * Time.deltaTime;
+            animator.SetBool("Running", true);
         }
 
 
-        //上矢印キー押すと奥いく
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            transform.position += new Vector3(wide, 0, 0);
-            Debug.Log(1);
-        }
 
-        //下矢印キー押すと手前いく
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            transform.position -= new Vector3(wide, 0, 0);
-            Debug.Log(2);
-        }
+        
+            //上矢印キー押すと奥いく
+            if (Input.GetKeyDown(KeyCode.UpArrow) && (gameObject.transform.position.x < -1.5f))
+            {
+                transform.position += new Vector3(wide, 0, 0);
+            }
 
+            //下矢印キー押すと手前いく
+            if (Input.GetKeyDown(KeyCode.DownArrow) && (-3 <= gameObject.transform.position.x))
+            {
+                transform.position -= new Vector3(wide, 0, 0);
+            }
+
+        
+       
     }
 
 
@@ -52,6 +58,20 @@ public class PlayerScript : MonoBehaviour {
 
             SceneManager.LoadScene("Clear");
         }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.name == "Enemy")
+        {
+            animator.SetBool("Damaging", true);
+        }
+        else
+        {
+            animator.SetBool("Damaging", false);
+        }
+
     }
 
 }
