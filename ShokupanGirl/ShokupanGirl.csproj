@@ -261,6 +261,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\ButtonScript.cs" />
     <Compile Include="Assets\Script\ClearScript.cs" />
+    <Compile Include="Assets\Script\DamageScript.cs" />
     <Compile Include="Assets\Script\EnemyScript.cs" />
     <Compile Include="Assets\Script\HomeScript.cs" />
     <Compile Include="Assets\Script\PlayerScript.cs" />

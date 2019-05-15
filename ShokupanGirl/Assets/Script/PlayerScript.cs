@@ -8,11 +8,15 @@ public class PlayerScript : MonoBehaviour {
     public float speed = 100.0f;
     public float wide = 3.5f;
     private Animator animator;
+    public int counter = 0;
+    public GameObject min;
+    public DamageScript damageScript;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         animator = GetComponent<Animator>();
+        damageScript = min.GetComponent<DamageScript>();
 	}
 
     // Update is called once per frame
@@ -46,8 +50,12 @@ public class PlayerScript : MonoBehaviour {
                 transform.position -= new Vector3(wide, 0, 0);
             }
 
-        
-       
+
+
+        damageScript.View(counter);
+
+
+
     }
 
 
@@ -66,6 +74,7 @@ public class PlayerScript : MonoBehaviour {
         if (collision.gameObject.name == "Enemy")
         {
             animator.SetBool("Damaging", true);
+            counter++;
         }
         else
         {
@@ -73,5 +82,7 @@ public class PlayerScript : MonoBehaviour {
         }
 
     }
+
+
 
 }
