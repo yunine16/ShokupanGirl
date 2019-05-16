@@ -9,13 +9,14 @@ public class PlayerScript : MonoBehaviour {
     public float wide = 3.5f;
     private Animator animator;
     public int counter = 0;
-    public GameObject min;
+    GameObject min;
     public DamageScript damageScript;
 
 
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();
+        min = GameObject.Find("min").gameObject;
         damageScript = min.GetComponent<DamageScript>();
 	}
 
