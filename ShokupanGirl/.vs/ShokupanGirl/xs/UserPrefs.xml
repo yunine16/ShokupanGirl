@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.ItemProperties.ShokupanGirl PreferredExecutionTarget="afc7a135-91be-47bc-a002-5ce9fb7bdd98" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/PlayerScript.cs">
     <Files>
-      <File FileName="Assets/Script/PlayerScript.cs" Line="55" Column="1" />
-      <File FileName="Assets/Script/TimeScript.cs" Line="4" Column="22" />
+      <File FileName="Assets/Script/PlayerScript.cs" Line="11" Column="28" />
+      <File FileName="Assets/Script/TimeScript.cs" Line="61" Column="22" />
       <File FileName="Assets/Script/EnemyScript.cs" Line="35" Column="10" />
       <File FileName="Assets/Script/HomeScript.cs" Line="15" Column="46" />
       <File FileName="Assets/Script/ClearScript.cs" Line="19" Column="12" />
-      <File FileName="Assets/Script/DamageScript.cs" Line="10" Column="15" />
+      <File FileName="Assets/Script/DamageScript.cs" Line="32" Column="8" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

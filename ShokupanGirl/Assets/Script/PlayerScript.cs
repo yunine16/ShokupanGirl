@@ -9,15 +9,15 @@ public class PlayerScript : MonoBehaviour {
     public float wide = 3.5f;
     private Animator animator;
     public int counter = 0;
-    GameObject min;
-    public DamageScript damageScript;
+    GameObject hour;
+    TimeScript timeScript;
 
 
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();
-        min = GameObject.Find("min").gameObject;
-        damageScript = min.GetComponent<DamageScript>();
+        hour = GameObject.Find("hour").gameObject;
+        timeScript = hour.GetComponent<TimeScript>();
 	}
 
     // Update is called once per frame
@@ -53,9 +53,9 @@ public class PlayerScript : MonoBehaviour {
 
 
 
-        damageScript.View(counter);
+        timeScript.LossTime(counter);
 
-
+        counter = 0;
 
     }
 

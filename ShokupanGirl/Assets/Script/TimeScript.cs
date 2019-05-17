@@ -11,6 +11,7 @@ public class TimeScript : MonoBehaviour {
     public int hour;
     public int min;
     private float timeLeft;
+    DamageScript damageScript;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,7 @@ public class TimeScript : MonoBehaviour {
         if(timeLeft <= 0.0)
         {
             timeLeft = 3.0f;
-            min += 5;
+            min += 1;
         }
 
         //60分になったら時間に１を足す
@@ -50,4 +51,14 @@ public class TimeScript : MonoBehaviour {
         hourText.text = hour.ToString();
 
 	}
+
+    public void LossTime(int counter)
+    {
+        Debug.Log(counter);
+
+        if(counter >= 1)
+        {
+            min += 5;
+        }
+    }
 }
