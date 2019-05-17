@@ -168,7 +168,6 @@
 -define:ENABLE_VSTU
 'Assets/Script/ButtonScript.cs'
 'Assets/Script/ClearScript.cs'
-'Assets/Script/DamageScript.cs'
 'Assets/Script/EnemyScript.cs'
 'Assets/Script/HomeScript.cs'
 'Assets/Script/PlayerScript.cs'
