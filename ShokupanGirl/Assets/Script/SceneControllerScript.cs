@@ -33,5 +33,10 @@ public class SceneControllerScript : MonoBehaviour {
         SceneManager.LoadScene("Stage1");
     }
 
+    public void ButtonClearClick()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
 
 }
