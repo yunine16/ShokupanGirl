@@ -53,7 +53,7 @@ public class TimeScript : MonoBehaviour {
 
     public void LossTime(int counter)
     {
-        Debug.Log(counter);
+        //Debug.Log(counter);
 
         if(counter >= 1)
         {

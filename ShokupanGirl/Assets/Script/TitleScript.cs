@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TitleScript : MonoBehaviour {
 
     private Animator animator;
+    bool run;
 
     // Use this for initialization
     void Start () {
@@ -16,18 +17,24 @@ public class TitleScript : MonoBehaviour {
 	void Update () {
 
 
-        if (Input.GetKey(KeyCode.Space)){
-            transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-            transform.position += new Vector3(3.0f,0.0f,0.0f) * Time.deltaTime;
-            animator.SetBool("Running", true);
-            Debug.Log("ss");
-        }
-        else
-        {
-            transform.position += Vector3.zero;
 
+
+        if (Input.GetKeyDown(KeyCode.Space)){
+            run = true;
         }
-       
+
+        if (run)
+        {
+            transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+            transform.position += new Vector3(3.0f, 0.0f, 0.0f) * Time.deltaTime;
+            animator.SetBool("Running", true);
+        }
+
+
+
+
+
+
     }
 
     private void OnTriggerEnter(Collider col)
