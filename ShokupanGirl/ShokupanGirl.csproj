@@ -259,12 +259,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\ButtonScript.cs" />
     <Compile Include="Assets\Script\ClearScript.cs" />
     <Compile Include="Assets\Script\EnemyScript.cs" />
-    <Compile Include="Assets\Script\HomeScript.cs" />
     <Compile Include="Assets\Script\PlayerScript.cs" />
+    <Compile Include="Assets\Script\SceneControllerScript.cs" />
     <Compile Include="Assets\Script\TimeScript.cs" />
+    <Compile Include="Assets\Script\TitleScript.cs" />
     <Compile Include="Assets\TaichiCharacterPack\TwinViewer\Scripts\Twin2ndSceneScript.cs" />
     <Compile Include="Assets\TaichiCharacterPack\TwinViewer\Scripts\TwinSceneScript.cs" />
     <Compile Include="Assets\TaichiCharacterPack\TwinViewer\Scripts\TwinViewScript.cs" />

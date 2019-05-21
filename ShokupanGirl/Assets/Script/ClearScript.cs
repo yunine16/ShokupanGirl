@@ -18,6 +18,6 @@ public class ClearScript : MonoBehaviour {
 
     public void OnRetry()
     {
-        SceneManager.LoadScene("Home");
+        SceneManager.LoadScene("Title");
     }
 }

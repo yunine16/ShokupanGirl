@@ -11,7 +11,6 @@ public class TimeScript : MonoBehaviour {
     public int hour;
     public int min;
     private float timeLeft;
-    DamageScript damageScript;
 
 	// Use this for initialization
 	void Start () {
