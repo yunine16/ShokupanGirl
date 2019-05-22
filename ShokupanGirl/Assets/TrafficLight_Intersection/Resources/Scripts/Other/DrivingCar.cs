@@ -11,7 +11,7 @@ public class DrivingCar : MonoBehaviour {
 
 	public bool handControl = false;	//運転するかどうか
 
-	[System.NonSerialized] public float speedNow = 0f;	//現在速度 (m/s)
+	[System.NonSerialized] public float speedNow = 10.0f;	//現在速度 (m/s)
 	[System.NonSerialized] public float angleY = 0f;    //車体の方向
 
     private float acceralation = 0.1f;  //加速度(1フレームあたり)
@@ -58,7 +58,8 @@ public class DrivingCar : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (handControl) {
+		/*
+        if (handControl) {
 
 			//ハンドル
 			if (Input.GetKey ("right")) {
@@ -135,18 +136,23 @@ public class DrivingCar : MonoBehaviour {
             }
 
 
+            */
+
             //実際の移動
+            /*
             if (speedNow == 0) {
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
             } else {
+            */
                 //速度ベクトル
                 speedV = speedNow * this.transform.forward;
                 //位置の更新（移動）
                 rb.velocity = new Vector3(speedV.x, 0, speedV.z);
-            }
-        }
+            //}
+       //}
 	}
+
 
     //フロントライト
     public void SettingFrontLight(bool lightStatus) {
@@ -181,16 +187,17 @@ public class DrivingCar : MonoBehaviour {
         }
     }
 
+    /*
     //ウインカー
     public void SettingTurnSignal(int lightStatus, float cTime) {
         if (lightStatus == 0) {
             for (int i = 0; i < turnSignal.Length; i++) {
                 turnSignal[i].GetComponent<Renderer>().material = css.turnSignalOff;
             }
-            /*
+
             if (turnSignalAS.isPlaying) {
                 turnSignalAS.Stop();
-            }*/
+            }
         } else {
             if (cTime >= blinkTime && cTime < blinkTime * 2) {
                 if (lightStatus == 1) {
@@ -208,14 +215,14 @@ public class DrivingCar : MonoBehaviour {
                 for (int i = 0; i < turnSignal.Length; i++) {
                     turnSignal[i].GetComponent<Renderer>().material = css.turnSignalOff;
                 }
-            }
+            }*/
             //ウインカーの音
             /*if (!turnSignalAS.isPlaying) {
                 turnSignalAS.Play();
             }*/
-        }
+        //}
 
-    }
+    //}
 
 
 }

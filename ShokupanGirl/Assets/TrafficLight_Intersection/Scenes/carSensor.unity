@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1209927293}
-  m_IndirectSpecularColor: {r: 0.39309943, g: 0.4369392, b: 0.504481, a: 1}
+  m_IndirectSpecularColor: {r: 0.39309955, g: 0.4369391, b: 0.5044811, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3573,7 +3573,7 @@ Prefab:
     - target: {fileID: 114958960932498924, guid: 89356597a68a42947800cfb5c31e754f,
         type: 2}
       propertyPath: handControl
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114648453110395336, guid: 89356597a68a42947800cfb5c31e754f, type: 2}

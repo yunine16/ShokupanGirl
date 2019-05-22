@@ -34,6 +34,10 @@ public class TrafficCycleNormal : TrafficCycle {
     //待ち時間表示器
     private GameObject[] timeDisplay1, timeDisplay2;
 
+    //車停止用
+    GameObject Car;
+    public DrivingCar drivingCar;
+
 
     // Use this for initialization
     void Start () {
@@ -202,6 +206,10 @@ public class TrafficCycleNormal : TrafficCycle {
 				}
 			}
 		}
+
+        //車
+        Car = GameObject.Find("Car").gameObject;
+        drivingCar = Car.GetComponent<DrivingCar>();
 			
 	}
 
@@ -314,7 +322,8 @@ public class TrafficCycleNormal : TrafficCycle {
 						//赤信号に
 						tlps1[i].SettingLightPR (lightP1 [i, 0], true);
 						tlps1[i].SettingLightPG (lightP1 [i, 1], false);
-					}
+
+                    }
 				} else {
 					cStep1 = 0;
 					if (audioOn) {
@@ -336,7 +345,8 @@ public class TrafficCycleNormal : TrafficCycle {
 						//青信号に
 						tlps2[i].SettingLightPR (lightP2 [i, 0], false);
 						tlps2[i].SettingLightPG (lightP2 [i, 1], true);
-					} 
+                        drivingCar.speedNow = 20.0f;
+                    } 
 				} else if (cTime >= redTime2 + pGreenTime2){
 					cStep2 = 1;		//点滅ステップへ	
 					if (audioOn) {
@@ -378,7 +388,9 @@ public class TrafficCycleNormal : TrafficCycle {
 						//赤信号に
 						tlps2[i].SettingLightPR (lightP2 [i, 0], true);
 						tlps2[i].SettingLightPG (lightP2 [i, 1], false);
-					}
+                        //車停止
+                        drivingCar.speedNow = 0f;
+                    }
 				} else {
 					cStep2 = 0;
 					if (audioOn) {
@@ -437,12 +449,11 @@ public class TrafficCycleNormal : TrafficCycle {
                     SettingTimeDisplayG(cTime, redTime2, allTime - restRedTime2, pGreenTime2);
             }
         }*/
-
-        cTime += Time.deltaTime;
+            
 
         //サイクル時間のリセットと更新
         if (cTime >= allTime) {
-			//cTime = 0f;
+			cTime = 0f;
 		} else {
 			cTime += Time.deltaTime;
 		}

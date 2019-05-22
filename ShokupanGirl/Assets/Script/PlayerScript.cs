@@ -72,7 +72,7 @@ public class PlayerScript : MonoBehaviour {
     public void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.gameObject.name == "Enemy")
+        if (collision.gameObject.name == "Enemy" || collision.gameObject.name == "Car")
         {
             animator.SetBool("Damaging", true);
             counter++;
