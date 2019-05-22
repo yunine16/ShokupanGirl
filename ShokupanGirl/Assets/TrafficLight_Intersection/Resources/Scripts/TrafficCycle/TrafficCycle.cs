@@ -37,9 +37,12 @@ public class TrafficCycle : MonoBehaviour {
 		for (int i = 0; i < tempDirection.Length; i++) {
 			if(tempDirection[i].transform.root.gameObject.name == this.name){
 				childCnt++;
+                Debug.Log(75675);
 			}
 		}
 		GameObject[] newDirection = new GameObject[childCnt];
+        //Debug.Log(childCnt);
+        //Debug.Log(tempDirection.Length);
 		childCnt = 0;
 		for (int i = 0; i < tempDirection.Length; i++) {
 			if(tempDirection[i].transform.root.gameObject.name == this.name){

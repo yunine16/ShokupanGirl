@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{77B7EE5F-A092-DC6D-F2F7-32B061110F25}|">
   <MonoDevelop.Ide.ItemProperties.ShokupanGirl PreferredExecutionTarget="d1f2b8c6-f677-4063-8780-06c66a01e80b" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/CameraController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/waTrafficScript.cs">
     <Files>
       <File FileName="Assets/Script/PlayerScript.cs" Line="38" Column="1" />
       <File FileName="Assets/Script/TimeScript.cs" Line="56" Column="11" />
@@ -8,10 +8,13 @@
       <File FileName="Assets/Script/TitleScript.cs" Line="30" Column="47" />
       <File FileName="Assets/Script/ClearScript.cs" Line="19" Column="2" />
       <File FileName="Assets/Script/SceneControllerScript.cs" Line="36" Column="35" />
-      <File FileName="Assets/TrafficLight_Intersection/Resources/Scripts/TrafficCycle/TrafficCycleNormal.cs" Line="348" Column="51" />
-      <File FileName="Assets/TrafficLight_Intersection/Resources/Scripts/TrafficCycle/TrafficLightSetting.cs" Line="189" Column="4" />
-      <File FileName="Assets/TrafficLight_Intersection/Resources/Scripts/Other/DrivingCar.cs" Line="14" Column="46" />
+      <File FileName="Assets/TrafficLight_Intersection/Resources/Scripts/TrafficCycle/TrafficCycleNormal.cs" Line="37" Column="1" />
+      <File FileName="Assets/TrafficLight_Intersection/Resources/Scripts/TrafficCycle/TrafficLightSetting.cs" Line="26" Column="31" />
+      <File FileName="Assets/TrafficLight_Intersection/Resources/Scripts/Other/DrivingCar.cs" Line="11" Column="1" />
       <File FileName="Assets/Script/CameraController.cs" Line="23" Column="27" />
+      <File FileName="Assets/TrafficLight_Intersection/Resources/Scripts/TrafficCycle/TrafficCycle.cs" Line="40" Column="34" />
+      <File FileName="Assets/Script/waTrafficScript.cs" Line="40" Column="6" />
+      <File FileName="Assets/Script/waTrafficPScript.cs" Line="10" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +23,7 @@
             <Node name="Assets" expanded="True">
               <Node name="FreeVoxelGirl" expanded="True" />
               <Node name="Script" expanded="True">
-                <Node name="CameraController.cs" selected="True" />
+                <Node name="waTrafficScript.cs" selected="True" />
               </Node>
               <Node name="TaichiCharacterPack" expanded="True">
                 <Node name="TwinViewer" expanded="True">

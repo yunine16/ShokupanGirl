@@ -38,6 +38,7 @@ public class TrafficCycleNormal : TrafficCycle {
     GameObject Car;
     public DrivingCar drivingCar;
 
+    //GameObject[] direction2;
 
     // Use this for initialization
     void Start () {
@@ -48,6 +49,7 @@ public class TrafficCycleNormal : TrafficCycle {
 		direction1 = getChildObjects(tempDirection);
 		tempDirection = GameObject.FindGameObjectsWithTag("Direction2");
 		direction2 = getChildObjects(tempDirection);
+        //Debug.Log(tempDirection[0].transform.position.x);
 		tempDirection = GameObject.FindGameObjectsWithTag("DirectionP1");
 		directionP1 = getChildObjects(tempDirection);
 		tempDirection = GameObject.FindGameObjectsWithTag("DirectionP2");
@@ -224,7 +226,10 @@ public class TrafficCycleNormal : TrafficCycle {
 
         //Debug.Log(cTime);
 
-		for(int i = 0; i < light1.GetLength(0); i++){
+
+        //Debug.Log(direction2.Length);
+
+        for (int i = 0; i < light1.GetLength(0); i++){
 			if (cTime < greenTime1) {
 				//青信号に
 				tls1 [i].SettingLightG (light1 [i, 0], true);
@@ -250,6 +255,7 @@ public class TrafficCycleNormal : TrafficCycle {
 
 		//方向２車灯の信号サイクル
 		for(int i = 0; i < light2.GetLength(0); i++){
+
 			if (cTime < redTime2) {
 				//赤信号に
 				tls2[i].SettingLightG (light2 [i, 0], false);
