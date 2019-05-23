@@ -12,7 +12,7 @@ public class DrivingCar : MonoBehaviour {
 	public bool handControl = false;	//運転するかどうか
 
 	//[System.NonSerialized] 
-    public float speedNow = 10.0f;	//現在速度 (m/s)
+    public float speedNow = 50.0f;	//現在速度 (m/s)
 	[System.NonSerialized] public float angleY = 0f;    //車体の方向
 
     private float acceralation = 0.1f;  //加速度(1フレームあたり)

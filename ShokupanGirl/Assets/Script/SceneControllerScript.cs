@@ -22,16 +22,34 @@ public class SceneControllerScript : MonoBehaviour {
     }
 
 
-    public void ButtonG1Click()
+    public void ButtonS2Click()
+    {
+        SceneManager.LoadScene("Stage2");
+    }
+
+
+    public void ButtonG1_1Click()
     {
         SceneManager.LoadScene("Title");
     }
 
 
-    public void ButtonG2Click()
+    public void ButtonG1_2Click()
     {
         SceneManager.LoadScene("Stage1");
     }
+
+    public void ButtonG2_1Click()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+
+    public void ButtonG2_2Click()
+    {
+        SceneManager.LoadScene("Stage2");
+    }
+
 
     public void ButtonClearClick()
     {

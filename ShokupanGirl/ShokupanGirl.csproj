@@ -266,6 +266,7 @@
     <Compile Include="Assets\Script\SceneControllerScript.cs" />
     <Compile Include="Assets\Script\TimeScript.cs" />
     <Compile Include="Assets\Script\TitleScript.cs" />
+    <Compile Include="Assets\Script\TriggerScript.cs" />
     <Compile Include="Assets\Script\waTrafficPScript.cs" />
     <Compile Include="Assets\Script\waTrafficScript.cs" />
     <Compile Include="Assets\TaichiCharacterPack\TwinViewer\Scripts\Twin2ndSceneScript.cs" />

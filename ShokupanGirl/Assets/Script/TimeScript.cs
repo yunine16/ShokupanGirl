@@ -11,11 +11,12 @@ public class TimeScript : MonoBehaviour {
     public int hour;
     public int min;
     private float timeLeft;
+    public float timePerMin;
 
 	// Use this for initialization
 	void Start () {
-        hour = 7;
-        min = 20;
+        hour = 8;
+        min = 9;
         hourText.text = hour.ToString();
         minText.text = min.ToString();
 	}
@@ -27,7 +28,7 @@ public class TimeScript : MonoBehaviour {
 
         if(timeLeft <= 0.0)
         {
-            timeLeft = 3.0f;
+            timeLeft = timePerMin;
             min += 1;
         }
 
@@ -38,11 +39,17 @@ public class TimeScript : MonoBehaviour {
             hour += 1;
         }
 
-
         //制限時間(8:30)になったらゲームオーバー画面に遷移
-        if (hour == 8 && min == 30)
+        if (min > 30)
         {
-            SceneManager.LoadScene("GameOver");
+            if (SceneManager.GetActiveScene().name == "Stage1")
+            {
+                SceneManager.LoadScene("GameOver1");
+            }
+            else
+            {
+                SceneManager.LoadScene("GameOver2");
+            }
         }
 
 

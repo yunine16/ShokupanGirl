@@ -12,6 +12,9 @@ public class PlayerScript : MonoBehaviour {
     GameObject hour;
     TimeScript timeScript;
 
+    float damageTime;
+
+
 
     // Use this for initialization
     void Start () {
@@ -46,7 +49,7 @@ public class PlayerScript : MonoBehaviour {
             }
 
             //下矢印キー押すと手前いく
-            if (Input.GetKeyDown(KeyCode.DownArrow) && (-3 <= gameObject.transform.position.x))
+            if (Input.GetKeyDown(KeyCode.DownArrow) && (-4 <= gameObject.transform.position.x))
             {
                 transform.position -= new Vector3(wide, 0, 0);
             }
@@ -56,6 +59,19 @@ public class PlayerScript : MonoBehaviour {
         timeScript.LossTime(counter);
 
         counter = 0;
+
+
+        if(damageTime >= 0)
+        {
+            damageTime -= Time.deltaTime;
+        }
+        else
+        {
+            animator.SetBool("Damaging", false);
+        }
+
+
+
 
     }
 
@@ -72,15 +88,26 @@ public class PlayerScript : MonoBehaviour {
     public void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.gameObject.name == "Enemy" || collision.gameObject.name == "Car")
+        if (collision.gameObject.name == "Enemy")
         {
             animator.SetBool("Damaging", true);
             counter++;
+            damageTime = 0.3f;
         }
-        else
+        else if(collision.gameObject.name == "Car")
         {
-            animator.SetBool("Damaging", false);
+            animator.SetBool("Damaging", true);
+
+            if(SceneManager.GetActiveScene().name== "Stage1")
+            {
+                SceneManager.LoadScene("GameOver1");
+            }
+            else
+            {
+                SceneManager.LoadScene("GameOver2");
+            }
         }
+
 
     }
 

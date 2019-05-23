@@ -16,8 +16,12 @@ public class waTrafficScript : MonoBehaviour
 
 
     //車停止用
-    GameObject Car;
-    public DrivingCar drivingCar;
+    public GameObject Car1;
+    public GameObject Car2;
+    public GameObject Car3;
+    DrivingCar drivingCar1;
+    DrivingCar drivingCar2;
+    DrivingCar drivingCar3;
 
 
 
@@ -25,8 +29,10 @@ public class waTrafficScript : MonoBehaviour
     void Start()
     {
         //車
-        Car = GameObject.Find("Car").gameObject;
-        drivingCar = Car.GetComponent<DrivingCar>();
+        //Car1 = GameObject.Find("Car").gameObject;
+        drivingCar1 = Car1.GetComponent<DrivingCar>();
+        drivingCar2 = Car2.GetComponent<DrivingCar>();
+        drivingCar3 = Car3.GetComponent<DrivingCar>();
 
 
         greenLight = gameObject.transform.Find("TLightGroupG").gameObject.transform.Find("PointLightG").gameObject.GetComponent<Light>();
@@ -46,18 +52,24 @@ public class waTrafficScript : MonoBehaviour
         if (cTime < greenTime)
         {
             GreenOn();
-            drivingCar.speedNow = 10.0f;
+            drivingCar1.speedNow = 50.0f;
+            drivingCar2.speedNow = 50.0f;
+            drivingCar3.speedNow = 50.0f;
         }
         else if (cTime < greenTime + yellowTime)
         {
             YellowOn();
-            drivingCar.speedNow = 10.0f;
+            drivingCar1.speedNow = 30.0f;
+            drivingCar2.speedNow = 30.0f;
+            drivingCar3.speedNow = 30.0f;
         }
         else if (cTime < greenTime + yellowTime + redTime)
         {
             RedOn();
             //車停止
-            drivingCar.speedNow = 0f;
+            drivingCar1.speedNow = 0f;
+            drivingCar2.speedNow = 0f;
+            drivingCar3.speedNow = 0f;
         }
         else
         {

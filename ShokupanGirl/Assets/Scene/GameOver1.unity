@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 48132484}
   - component: {fileID: 48132483}
   m_Layer: 5
-  m_Name: ButtonG2
+  m_Name: ButtonG1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1420059765}
-        m_MethodName: ButtonG2Click
+        m_MethodName: ButtonG1_2Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1914,7 +1914,7 @@ GameObject:
   - component: {fileID: 1589078439}
   - component: {fileID: 1589078438}
   m_Layer: 5
-  m_Name: ButtonG1
+  m_Name: ButtonG1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1979,7 +1979,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1420059765}
-        m_MethodName: ButtonG1Click
+        m_MethodName: ButtonG1_1Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
