@@ -176,6 +176,7 @@
 'Assets/Script/TriggerScript.cs'
 'Assets/Script/waTrafficPScript.cs'
 'Assets/Script/waTrafficScript.cs'
+'Assets/Script/waTrafficScript2.cs'
 'Assets/TaichiCharacterPack/TwinViewer/Scripts/Twin2ndSceneScript.cs'
 'Assets/TaichiCharacterPack/TwinViewer/Scripts/TwinSceneScript.cs'
 'Assets/TaichiCharacterPack/TwinViewer/Scripts/TwinViewScript.cs'

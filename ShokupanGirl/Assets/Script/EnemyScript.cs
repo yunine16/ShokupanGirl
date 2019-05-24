@@ -5,7 +5,7 @@ using System;
 
 public class EnemyScript : MonoBehaviour {
 
-    public int lossTime = 5;
+    public int lossTime = 3;
 
 
     public float speed;

@@ -6,6 +6,7 @@ public class TriggerScript : MonoBehaviour {
 
     public GameObject Stopper1;
     public GameObject Stopper2;
+    public GameObject Stopper3;
 
     // Use this for initialization
     void Start () {
@@ -24,6 +25,7 @@ public class TriggerScript : MonoBehaviour {
             Destroy(this);
             Destroy(Stopper1);
             Destroy(Stopper2);
+            Destroy(Stopper3);
         }
     }
 }

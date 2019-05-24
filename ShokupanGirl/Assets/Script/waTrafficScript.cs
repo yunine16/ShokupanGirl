@@ -21,9 +21,10 @@ public class waTrafficScript : MonoBehaviour
     public GameObject Car3;
     DrivingCar drivingCar1;
     DrivingCar drivingCar2;
-    DrivingCar drivingCar3;
+    //DrivingCar drivingCar3;
 
-
+    GameObject TLightGroupG;
+    GameObject PointLightG;
 
     // Use this for initialization
     void Start()
@@ -31,11 +32,16 @@ public class waTrafficScript : MonoBehaviour
         //車
         //Car1 = GameObject.Find("Car").gameObject;
         drivingCar1 = Car1.GetComponent<DrivingCar>();
-        drivingCar2 = Car2.GetComponent<DrivingCar>();
-        drivingCar3 = Car3.GetComponent<DrivingCar>();
+        //drivingCar2 = Car2.GetComponent<DrivingCar>();
+        //drivingCar3 = Car3.GetComponent<DrivingCar>();
 
+        TLightGroupG = gameObject.transform.Find("TLightGroupG").gameObject;
+        //Debug.Log(TLightGroupG.name);
+        PointLightG = TLightGroupG.transform.Find("PointLightG").gameObject;
+        //Debug.Log(PointLightG.name);
 
-        greenLight = gameObject.transform.Find("TLightGroupG").gameObject.transform.Find("PointLightG").gameObject.GetComponent<Light>();
+        greenLight = PointLightG.GetComponent<Light>();
+        //greenLight = gameObject.transform.Find("TLightGroupG").gameObject.transform.Find("PointLightG").gameObject.GetComponent<Light>();
         yellowLight = gameObject.transform.Find("TLightGroupY").gameObject.transform.Find("PointLightY").gameObject.GetComponent<Light>();
         redLight = gameObject.transform.Find("TLightGroupR").gameObject.transform.Find("PointLightR").gameObject.GetComponent<Light>();
         allTime = greenTime + yellowTime + redTime;
@@ -53,23 +59,23 @@ public class waTrafficScript : MonoBehaviour
         {
             GreenOn();
             drivingCar1.speedNow = 50.0f;
-            drivingCar2.speedNow = 50.0f;
-            drivingCar3.speedNow = 50.0f;
+            //drivingCar2.speedNow = 50.0f;
+            //drivingCar3.speedNow = 50.0f;
         }
         else if (cTime < greenTime + yellowTime)
         {
             YellowOn();
             drivingCar1.speedNow = 30.0f;
-            drivingCar2.speedNow = 30.0f;
-            drivingCar3.speedNow = 30.0f;
+            //drivingCar2.speedNow = 30.0f;
+            //drivingCar3.speedNow = 30.0f;
         }
         else if (cTime < greenTime + yellowTime + redTime)
         {
             RedOn();
             //車停止
             drivingCar1.speedNow = 0f;
-            drivingCar2.speedNow = 0f;
-            drivingCar3.speedNow = 0f;
+            //drivingCar2.speedNow = 0f;
+            //drivingCar3.speedNow = 0f;
         }
         else
         {

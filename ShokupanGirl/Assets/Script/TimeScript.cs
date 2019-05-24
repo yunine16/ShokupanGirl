@@ -40,7 +40,7 @@ public class TimeScript : MonoBehaviour {
         }
 
         //制限時間(8:30)になったらゲームオーバー画面に遷移
-        if (min > 30)
+        if (min >= 30)
         {
             if (SceneManager.GetActiveScene().name == "Stage1")
             {
