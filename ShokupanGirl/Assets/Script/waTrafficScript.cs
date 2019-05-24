@@ -26,6 +26,14 @@ public class waTrafficScript : MonoBehaviour
     GameObject TLightGroupG;
     GameObject PointLightG;
 
+
+    //車の速さ
+    public float gMater;
+    public float yMater;
+    public float rMater;
+
+
+
     // Use this for initialization
     void Start()
     {
@@ -58,14 +66,14 @@ public class waTrafficScript : MonoBehaviour
         if (cTime < greenTime)
         {
             GreenOn();
-            drivingCar1.speedNow = 50.0f;
+            drivingCar1.speedNow = gMater;
             //drivingCar2.speedNow = 50.0f;
             //drivingCar3.speedNow = 50.0f;
         }
         else if (cTime < greenTime + yellowTime)
         {
             YellowOn();
-            drivingCar1.speedNow = 30.0f;
+            drivingCar1.speedNow = yMater;
             //drivingCar2.speedNow = 30.0f;
             //drivingCar3.speedNow = 30.0f;
         }
@@ -73,7 +81,7 @@ public class waTrafficScript : MonoBehaviour
         {
             RedOn();
             //車停止
-            drivingCar1.speedNow = 0f;
+            drivingCar1.speedNow = rMater;
             //drivingCar2.speedNow = 0f;
             //drivingCar3.speedNow = 0f;
         }
