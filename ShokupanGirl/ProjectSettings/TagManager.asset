@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DirectionP1
+  - Direction1
+  - Direction2
+  - Cars
+  - Enemy
   layers:
   - Default
   - TransparentFX

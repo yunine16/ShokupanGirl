@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour {
     GameObject hour;
     TimeScript timeScript;
 
+    //GameObject Car;
     float damageTime;
 
 
@@ -87,14 +88,15 @@ public class PlayerScript : MonoBehaviour {
 
     public void OnCollisionEnter(Collision collision)
     {
+        //Car = GameObject.FindWithTag("Cars");
 
-        if (collision.gameObject.name == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             animator.SetBool("Damaging", true);
             counter++;
             damageTime = 0.3f;
         }
-        else if(collision.gameObject.name == "Car")
+        else if(collision.gameObject.tag == "Cars")
         {
             animator.SetBool("Damaging", true);
 
