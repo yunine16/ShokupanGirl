@@ -261,7 +261,9 @@
   <ItemGroup>
     <Compile Include="Assets\Script\CameraController.cs" />
     <Compile Include="Assets\Script\ClearScript.cs" />
+    <Compile Include="Assets\Script\EnemyGeneratorScript.cs" />
     <Compile Include="Assets\Script\EnemyScript.cs" />
+    <Compile Include="Assets\Script\IntersectionController.cs" />
     <Compile Include="Assets\Script\PlayerScript.cs" />
     <Compile Include="Assets\Script\SceneControllerScript.cs" />
     <Compile Include="Assets\Script\TimeScript.cs" />

@@ -13,6 +13,7 @@ public class waTrafficPScript : MonoBehaviour
     float cTime, allTime;
     float blinkInterval = 0.5f;
 
+
     // Use this for initialization
     void Start()
     {

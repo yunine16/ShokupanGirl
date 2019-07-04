@@ -5,6 +5,7 @@ using UnityEngine;
 public class waTrafficScript : MonoBehaviour
 {
 
+    // 信号の変化に周りのオブジェクトの動きを対応させるスクリプト
 
     Light greenLight, yellowLight, redLight;
 
@@ -16,12 +17,9 @@ public class waTrafficScript : MonoBehaviour
 
 
     //車停止用
-    public GameObject Car1;
-    public GameObject Car2;
-    public GameObject Car3;
-    DrivingCar drivingCar1;
-    DrivingCar drivingCar2;
-    //DrivingCar drivingCar3;
+    public GameObject Car;
+    DrivingCar drivingCar;
+
 
     GameObject TLightGroupG;
     GameObject PointLightG;
@@ -38,10 +36,8 @@ public class waTrafficScript : MonoBehaviour
     void Start()
     {
         //車
-        //Car1 = GameObject.Find("Car").gameObject;
-        drivingCar1 = Car1.GetComponent<DrivingCar>();
-        //drivingCar2 = Car2.GetComponent<DrivingCar>();
-        //drivingCar3 = Car3.GetComponent<DrivingCar>();
+        drivingCar = Car.GetComponent<DrivingCar>();
+
 
         TLightGroupG = gameObject.transform.Find("TLightGroupG").gameObject;
         //Debug.Log(TLightGroupG.name);
@@ -66,24 +62,19 @@ public class waTrafficScript : MonoBehaviour
         if (cTime < greenTime)
         {
             GreenOn();
-            drivingCar1.speedNow = gMater;
-            //drivingCar2.speedNow = 50.0f;
-            //drivingCar3.speedNow = 50.0f;
+            drivingCar.speedNow = gMater;
+
         }
         else if (cTime < greenTime + yellowTime)
         {
             YellowOn();
-            drivingCar1.speedNow = yMater;
-            //drivingCar2.speedNow = 30.0f;
-            //drivingCar3.speedNow = 30.0f;
+            drivingCar.speedNow = yMater;
         }
         else if (cTime < greenTime + yellowTime + redTime)
         {
             RedOn();
             //車停止
-            drivingCar1.speedNow = rMater;
-            //drivingCar2.speedNow = 0f;
-            //drivingCar3.speedNow = 0f;
+            drivingCar.speedNow = rMater;
         }
         else
         {

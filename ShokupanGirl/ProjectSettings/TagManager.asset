@@ -9,6 +9,7 @@ TagManager:
   - Direction2
   - Cars
   - Enemy
+  - Intersection
   layers:
   - Default
   - TransparentFX
