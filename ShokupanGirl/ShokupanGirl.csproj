@@ -262,6 +262,7 @@
     <Compile Include="Assets\Script\CameraController.cs" />
     <Compile Include="Assets\Script\CarGeneratorScript.cs" />
     <Compile Include="Assets\Script\ClearScript.cs" />
+    <Compile Include="Assets\Script\EnemyGeneratorScript.cs" />
     <Compile Include="Assets\Script\EnemyScript.cs" />
     <Compile Include="Assets\Script\PlayerScript.cs" />
     <Compile Include="Assets\Script\SceneControllerScript.cs" />
