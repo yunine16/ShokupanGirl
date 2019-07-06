@@ -15,33 +15,31 @@ public class waTrafficScript : MonoBehaviour
     float cTime, allTime;
 
 
+    /*
     //車停止用
-    public GameObject Car1;
-    public GameObject Car2;
-    public GameObject Car3;
-    DrivingCar drivingCar1;
-    DrivingCar drivingCar2;
-    //DrivingCar drivingCar3;
+    GameObject Car;
+    DrivingCar drivingCar;
+    */
+
 
     GameObject TLightGroupG;
     GameObject PointLightG;
 
 
     //車の速さ
-    public float gMater;
-    public float yMater;
-    public float rMater;
+    //public float gMater;
+    //public float yMater;
+    //public float rMater;
 
+
+    public bool red;
 
 
     // Use this for initialization
     void Start()
     {
-        //車
-        //Car1 = GameObject.Find("Car").gameObject;
-        drivingCar1 = Car1.GetComponent<DrivingCar>();
-        //drivingCar2 = Car2.GetComponent<DrivingCar>();
-        //drivingCar3 = Car3.GetComponent<DrivingCar>();
+
+
 
         TLightGroupG = gameObject.transform.Find("TLightGroupG").gameObject;
         //Debug.Log(TLightGroupG.name);
@@ -62,34 +60,36 @@ public class waTrafficScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //車
+        //Car = GameObject.FindWithTag("Cars");
+        //drivingCar = Car.GetComponent<DrivingCar>();
+
         cTime += Time.deltaTime;
         if (cTime < greenTime)
         {
             GreenOn();
-            drivingCar1.speedNow = gMater;
-            //drivingCar2.speedNow = 50.0f;
-            //drivingCar3.speedNow = 50.0f;
+            //drivingCar.speedNow = gMater;
+            red = false;
         }
         else if (cTime < greenTime + yellowTime)
         {
             YellowOn();
-            drivingCar1.speedNow = yMater;
-            //drivingCar2.speedNow = 30.0f;
-            //drivingCar3.speedNow = 30.0f;
+            //drivingCar.speedNow = yMater;
+            red = false;
         }
         else if (cTime < greenTime + yellowTime + redTime)
         {
             RedOn();
             //車停止
-            drivingCar1.speedNow = rMater;
-            //drivingCar2.speedNow = 0f;
-            //drivingCar3.speedNow = 0f;
+            //drivingCar.speedNow = rMater;
+            red = true;
         }
         else
         {
             cTime = 0;
         }
     }
+
 
     void GreenOn()
     {

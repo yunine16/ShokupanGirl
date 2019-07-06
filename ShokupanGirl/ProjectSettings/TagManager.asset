@@ -9,6 +9,8 @@ TagManager:
   - Direction2
   - Cars
   - Enemy
+  - FrontBox
+  - BackBox
   layers:
   - Default
   - TransparentFX

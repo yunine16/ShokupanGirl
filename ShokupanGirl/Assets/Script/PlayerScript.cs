@@ -86,7 +86,7 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         //Car = GameObject.FindWithTag("Cars");
 

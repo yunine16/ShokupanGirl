@@ -262,7 +262,10 @@
     <Compile Include="Assets\Script\CameraController.cs" />
     <Compile Include="Assets\Script\CarGeneratorScript.cs" />
     <Compile Include="Assets\Script\ClearScript.cs" />
+    <Compile Include="Assets\Script\EnemyGeneratorScript.cs" />
     <Compile Include="Assets\Script\EnemyScript.cs" />
+    <Compile Include="Assets\Script\EnemySpeedUpScript.cs" />
+    <Compile Include="Assets\Script\EnemyStopScript.cs" />
     <Compile Include="Assets\Script\PlayerScript.cs" />
     <Compile Include="Assets\Script\SceneControllerScript.cs" />
     <Compile Include="Assets\Script\TimeScript.cs" />
@@ -277,7 +280,6 @@
     <Compile Include="Assets\TaichiCharacterPack\Viewer\Scripts\ViewScript.cs" />
     <Compile Include="Assets\TrafficLight_Intersection\Resources\Scripts\Other\CarSensor.cs" />
     <Compile Include="Assets\TrafficLight_Intersection\Resources\Scripts\Other\CarSetting.cs" />
-    <Compile Include="Assets\TrafficLight_Intersection\Resources\Scripts\Other\CarSpeedText.cs" />
     <Compile Include="Assets\TrafficLight_Intersection\Resources\Scripts\Other\DrivingCar.cs" />
     <Compile Include="Assets\TrafficLight_Intersection\Resources\Scripts\Other\HumanCamera.cs" />
     <Compile Include="Assets\TrafficLight_Intersection\Resources\Scripts\Other\Template.cs" />
