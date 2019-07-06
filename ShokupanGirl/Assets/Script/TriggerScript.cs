@@ -4,28 +4,48 @@ using UnityEngine;
 
 public class TriggerScript : MonoBehaviour {
 
-    public GameObject Stopper1;
-    public GameObject Stopper2;
-    public GameObject Stopper3;
+    //public GameObject Stopper;
+
+    DrivingCar drivingCar;
+    //(GameObject car;
+
+    waTrafficScript waTrafficScript;
+    GameObject trafficLight;
+
+    public bool stop;
 
     // Use this for initialization
     void Start () {
-		
+        trafficLight = GameObject.Find("TrafficLight");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
-    public void OnTriggerEnter(Collider col)
+    void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.name == "Player")
+        //car = GameObject.FindWithTag("Cars");
+
+        drivingCar = col.GetComponent<DrivingCar>();
+
+        if (col.gameObject.tag == "Cars")
         {
-            Destroy(this);
-            Destroy(Stopper1);
-            Destroy(Stopper2);
-            Destroy(Stopper3);
+            waTrafficScript = trafficLight.GetComponent<waTrafficScript>();
+            bool red = waTrafficScript.red;
+
+            if (red)
+            {
+                float speedCar = drivingCar.speedNow;
+                stop = true;
+                drivingCar.StopCar(stop);
+            }
+            else
+            {
+                drivingCar.StartCar();
+            }
+            
         }
     }
 }

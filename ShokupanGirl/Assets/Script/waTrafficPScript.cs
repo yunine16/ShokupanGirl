@@ -13,6 +13,8 @@ public class waTrafficPScript : MonoBehaviour
     float cTime, allTime;
     float blinkInterval = 0.5f;
 
+    public bool redP;
+
     // Use this for initialization
     void Start()
     {
@@ -38,14 +40,17 @@ public class waTrafficPScript : MonoBehaviour
         if (cTime < greenTime)
         {
             GreenOn();
+            redP = false;
         }
         else if (cTime < greenTime + blinkTime)
         {
             Blink();
+            redP = false;
         }
         else if (cTime < greenTime + blinkTime + redTime)
         {
             RedOn();
+            redP = true;
         }
         else
         {

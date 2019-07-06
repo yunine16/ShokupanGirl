@@ -20,7 +20,15 @@ public class EnemyGeneratorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        timeElapsed += Time.deltaTime;
+        if (Input.GetKey(KeyCode.Space))
+        {
+            timeElapsed += 0;
+        }
+        else
+        {
+            timeElapsed += Time.deltaTime;
+        }
+        
 
         if (timeElapsed >= timeOut)
         {

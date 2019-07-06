@@ -12,17 +12,21 @@ public class DrivingCar : MonoBehaviour {
 	public bool handControl = false;	//運転するかどうか
 
 	//[System.NonSerialized] 
-    public float speedNow = 50.0f;	//現在速度 (m/s)
+    public float speedNow;	//現在速度 (m/s)
+    public float speedCar;
 	[System.NonSerialized] public float angleY = 0f;    //車体の方向
 
+    /*
     private float acceralation = 0.1f;  //加速度(1フレームあたり)
     private float turning = 0.5f;		//ハンドルを切る度合い
 
 	[System.NonSerialized] public int gear = 1;         //ギア（1:ドライブ, -1:バック）
+	*/
 
     private Rigidbody rb;
     private Vector3 speedV;
 
+    /*
     //車のライトの設定
     private CarSetting css;
     private GameObject[] frontLight;
@@ -34,6 +38,7 @@ public class DrivingCar : MonoBehaviour {
     private float cTime = 0;
     private float blinkTime = 0.35f;
     private bool frontLightSt = false;
+    */
 
 
     // Use this for initialization
@@ -41,6 +46,9 @@ public class DrivingCar : MonoBehaviour {
 		rb = this.GetComponent<Rigidbody> ();	//rigidbodyの取得
 		angleY = transform.localEulerAngles.y;	//方向の取得
 
+        speedNow = speedCar;
+
+        /*
         //ライトの設定
         css = this.GetComponent<CarSetting>();
         frontLight = new GameObject[2];
@@ -55,6 +63,7 @@ public class DrivingCar : MonoBehaviour {
         for (int i = 0; i < turnSignal.Length; i++) {
             turnSignal[i] = this.transform.Find("TurnSignal (" + (i + 1) + ")").gameObject;
         }
+        */
     }
 
 	// Update is called once per frame
@@ -150,80 +159,46 @@ public class DrivingCar : MonoBehaviour {
                 speedV = speedNow * this.transform.forward;
                 //位置の更新（移動）
                 rb.velocity = new Vector3(speedV.x, 0, speedV.z);
-            //}
-       //}
-	}
-
-
-    //フロントライト
-    public void SettingFrontLight(bool lightStatus) {
-        for (int i = 0; i < frontLight.Length; i++) {
-            if (lightStatus) {
-                frontLight[i].GetComponent<Renderer>().material = css.frontLightOn;
-            } else {
-                frontLight[i].GetComponent<Renderer>().material = css.frontLightOff;
-            }
-        }
-    }
-
-    //テールランプ
-    public void SettingTailLight(bool lightStatus) {
-        for(int i = 0; i < tailLight.Length; i++) {
-            if (lightStatus) {
-                tailLight[i].GetComponent<Renderer>().material = css.tailLightOn;
-            } else {
-                tailLight[i].GetComponent<Renderer>().material = css.tailLightOff;
-            }
-        }
-    }
-
-    //ブレーキランプ
-    public void SettingStopLight(bool lightStatus) {
-        for (int i = 0; i < tailLight.Length; i++) {
-            if (lightStatus) {
-                tailLight[i].GetComponent<Renderer>().material = css.stopLightOn;
-            } else {
-                tailLight[i].GetComponent<Renderer>().material = css.tailLightOff;
-            }
-        }
-    }
-
-    /*
-    //ウインカー
-    public void SettingTurnSignal(int lightStatus, float cTime) {
-        if (lightStatus == 0) {
-            for (int i = 0; i < turnSignal.Length; i++) {
-                turnSignal[i].GetComponent<Renderer>().material = css.turnSignalOff;
-            }
-
-            if (turnSignalAS.isPlaying) {
-                turnSignalAS.Stop();
-            }
-        } else {
-            if (cTime >= blinkTime && cTime < blinkTime * 2) {
-                if (lightStatus == 1) {
-                    turnSignal[0].GetComponent<Renderer>().material = css.turnSignalOn;
-                    turnSignal[1].GetComponent<Renderer>().material = css.turnSignalOff;
-                    turnSignal[2].GetComponent<Renderer>().material = css.turnSignalOn;
-                    turnSignal[3].GetComponent<Renderer>().material = css.turnSignalOff;
-                } else if (lightStatus == -1) {
-                    turnSignal[0].GetComponent<Renderer>().material = css.turnSignalOff;
-                    turnSignal[1].GetComponent<Renderer>().material = css.turnSignalOn;
-                    turnSignal[2].GetComponent<Renderer>().material = css.turnSignalOff;
-                    turnSignal[3].GetComponent<Renderer>().material = css.turnSignalOn;
-                }
-            } else {
-                for (int i = 0; i < turnSignal.Length; i++) {
-                    turnSignal[i].GetComponent<Renderer>().material = css.turnSignalOff;
-                }
-            }*/
-            //ウインカーの音
-            /*if (!turnSignalAS.isPlaying) {
-                turnSignalAS.Play();
-            }*/
+        //}
         //}
 
-    //}
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "BackBox")
+        {
+            speedNow = 0;
+            rb.velocity = new Vector3(speedV.x, 0, speedV.z);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "BackBox") {
+            speedNow = speedCar;
+            rb.velocity = new Vector3(speedV.x, 0, speedV.z);
+        }           
+    }
+
+
+
+    public void StopCar(bool stop)
+    {
+        if (stop)
+        {
+            speedNow = 0;
+            rb.velocity = new Vector3(speedV.x, 0, speedV.z);
+        }
+
+    }
+
+    public void StartCar()
+    {
+        speedNow=speedCar;
+        rb.velocity = new Vector3(speedV.x, 0, speedV.z);
+    }
+
 
 
 }
