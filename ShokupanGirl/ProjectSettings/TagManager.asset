@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - FrontBox
   - BackBox
+  - Trigger
+  - CarWall
   layers:
   - Default
   - TransparentFX

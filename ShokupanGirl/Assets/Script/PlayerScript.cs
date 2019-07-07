@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour {
     TimeScript timeScript;
 
     //GameObject Car;
-    float damageTime;
+    public float damageTime;
 
 
 

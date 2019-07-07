@@ -48,6 +48,7 @@ public class DrivingCar : MonoBehaviour {
 
         speedNow = speedCar;
 
+
         /*
         //ライトの設定
         css = this.GetComponent<CarSetting>();
@@ -171,6 +172,9 @@ public class DrivingCar : MonoBehaviour {
             speedNow = 0;
             rb.velocity = new Vector3(speedV.x, 0, speedV.z);
         }
+        else if (col.gameObject.tag == "CarWall"){
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -182,23 +186,15 @@ public class DrivingCar : MonoBehaviour {
     }
 
 
-
-    public void StopCar(bool stop)
+    public void StopCar()
     {
-        if (stop)
-        {
-            speedNow = 0;
-            rb.velocity = new Vector3(speedV.x, 0, speedV.z);
-        }
-
+        speedNow = 0;
+        rb.velocity = new Vector3(speedV.x, 0, speedV.z);
     }
 
     public void StartCar()
     {
-        speedNow=speedCar;
+        speedNow = speedCar;
         rb.velocity = new Vector3(speedV.x, 0, speedV.z);
     }
-
-
-
 }

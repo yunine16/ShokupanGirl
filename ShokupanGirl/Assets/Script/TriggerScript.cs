@@ -7,7 +7,7 @@ public class TriggerScript : MonoBehaviour {
     //public GameObject Stopper;
 
     DrivingCar drivingCar;
-    //(GameObject car;
+    //GameObject car;
 
     waTrafficScript waTrafficScript;
     GameObject trafficLight;
@@ -17,7 +17,7 @@ public class TriggerScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         trafficLight = GameObject.Find("TrafficLight");
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,26 +26,27 @@ public class TriggerScript : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
-        //car = GameObject.FindWithTag("Cars");
+        waTrafficScript = trafficLight.GetComponent<waTrafficScript>();
+        bool red = waTrafficScript.red;
 
-        drivingCar = col.GetComponent<DrivingCar>();
+        //Debug.Log("aaa");
 
-        if (col.gameObject.tag == "Cars")
+        if (col.gameObject.tag == "FrontBox")
         {
-            waTrafficScript = trafficLight.GetComponent<waTrafficScript>();
-            bool red = waTrafficScript.red;
+            //Debug.Log(col.transform.root);
+            drivingCar = col.transform.root.GetComponent<DrivingCar>();
 
             if (red)
             {
-                float speedCar = drivingCar.speedNow;
-                stop = true;
-                drivingCar.StopCar(stop);
+                drivingCar.StopCar();
             }
             else
             {
                 drivingCar.StartCar();
             }
-            
+
         }
     }
+
+
 }

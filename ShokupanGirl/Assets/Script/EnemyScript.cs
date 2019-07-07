@@ -31,8 +31,10 @@ public class EnemyScript : MonoBehaviour {
         if (collision.gameObject.name == "Player")
         {
             animator.SetBool("Walking", false);
-            Destroy(gameObject);
-
+            Destroy(this.gameObject);
+        }else if (collision.gameObject.name == "DestroyWall")
+        {
+            Destroy(this.gameObject);
         }
     }
 
@@ -40,7 +42,7 @@ public class EnemyScript : MonoBehaviour {
     public void SpeedUpEnemy()
     {
        speedNowEnemy = 10 * speedEnemy;
-       Debug.Log("EnemySpeedUp");
+       //Debug.Log("EnemySpeedUp");
     }
 
     public void UsualEnemy()
